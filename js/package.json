@@ -1,0 +1,51 @@
+{
+  "name": "BIS_Paper",
+  "version": "0.0.1",
+  "description": "Bismuth HD Paper wallet",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "bip39": "^3.0.2",
+    "create-hash": "^1.2.0",
+    "default-passive-events": "^1.0.10",
+    "dnaurl": "^0.0.6",
+    "easyqrcodejs": "^3.2.0",
+    "hdkey": "^2.0.1",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.12.2",
+    "jest": "^24.9.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "build": "webpack --display-modules",
+    "start": "webpack-dev-server --open",
+    "serve": "http-server dist",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngainorDev/BIS-Paper.git"
+  },
+  "keywords": [
+    "Bismuth",
+    "Crypto-currency",
+    "blockchain",
+    "HD wallet"
+  ],
+  "author": "Angainor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngainorDev/BIS-Paper/issues"
+  },
+  "homepage": "https://github.com/AngainorDev/BIS-Paper#readme"
+}
