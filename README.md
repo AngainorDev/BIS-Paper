@@ -9,12 +9,12 @@ Currently uses the ECDSA keys scheme only.
 
 Functional, follows current standards for HD wallet derivation.
 
-See [https://angainordev.github.io/BIS-paper/doc/](https://angainordev.github.io/BIS-paper/doc/) for more.
+See [https://angainordev.github.io/BIS-Paper/doc/](https://angainordev.github.io/BIS-Paper/doc/) for more.
 
 
-Auto build Github pages version: [https://angainordev.github.io/BIS-paper/js/dist/index.html](https://angainordev.github.io/BIS-paper/js/dist/index.html)
+Auto build Github pages version: [https://angainordev.github.io/BIS-Paper/js/dist/index.html](https://angainordev.github.io/BIS-Paper/js/dist/index.html)
 
-Paper wallets [https://angainordev.github.io/BIS-paper/doc/paperwallet](https://angainordev.github.io/BIS-paper/doc/paperwallet)
+Paper wallets [https://angainordev.github.io/BIS-Paper/doc/paperwallet](https://angainordev.github.io/BIS-Paper/doc/paperwallet)
 
 Selectable wallet template, see the doc on how to submit your own templates to be included.
 
@@ -30,5 +30,7 @@ Selectable wallet template, see the doc on how to submit your own templates to b
 
 Donations will help us maintain and improve this tool and other ones
 
-
+BIS Address
+Bis1ZQxwgiXemim9MSmPpVUP2ykBAJTy1ncea  
+![](https://raw.githubusercontent.com/AngainorDev/BIS-Paper/main/angainor-bis.png)
 
