@@ -4,6 +4,8 @@ A HD Paper wallet for Bismuth (BIS) Crypto currency.
 
 Currently uses the ECDSA keys scheme only.
 
+Support for Chameleon wallet seeds (After september 2019), see "options" button.
+
 
 ## Current state
 
@@ -18,6 +20,10 @@ Paper wallets [https://angainordev.github.io/BIS-Paper/doc/paperwallet](https://
 
 Selectable wallet template, see the doc on how to submit your own templates to be included.
 
+## Changelog
+
+- v0.2: Support for Chameleon wallet seeds (After september 2019) 
+- v0.1: Initial commit, fully functional ECDSA support 
 
 
 ## Roadmap

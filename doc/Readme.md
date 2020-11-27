@@ -34,6 +34,7 @@ WIP - left over from previous work, to be done.
 
 ## Changelog
 
+- v0.2: Support for Chameleon wallet seeds (After september 2019) 
 - v0.1: Initial commit, fully functional ECDSA support 
 
 ## Donation address

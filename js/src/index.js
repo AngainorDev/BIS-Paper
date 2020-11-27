@@ -69,11 +69,16 @@ function pubkey_to_address(publicKey) {
     const step1 = publicKey;
     const step2 = createHash('sha256').update(step1).digest();
     const step3 = createHash('rmd160').update(step2).digest();
+
     var step4 = Buffer.allocUnsafe(21+2);
     step4.writeUInt8(0x4f, 0);
     step4.writeUInt8(0x54, 1);
     step4.writeUInt8(0x5b, 2);
+    //var step4 = Buffer.allocUnsafe(21);
+    //step4.writeUInt8(0x00, 0);
+
     step3.copy(step4, 3); //step4 now holds the extended RIPMD-160 result
+    //step3.copy(step4, 1);
     const step9 = bs58check.encode(step4);
     if (verbose) console.log('Base58Check: ' + step9);
     return step9;
@@ -95,15 +100,20 @@ function generate_addresses() {
         seed = bip39.mnemonicToSeedSync(mnemonic, password); //.slice(0,32); //creates seed buffer
     }
     if (verbose) {
-        console.log('Seed: ' + seed);
+        //console.log('Seed: ' + seed);
         console.log('Seed hex: ' + seed.toString('hex'));
         console.log('mnemonic: ' + mnemonic);
     }
+    // Komodo mode attempt
+    //seed = createHash('sha256').update(seed).digest();
+    //console.log('Seed hex: ' + seed.toString('hex'));
+
     const root = hdkey.fromMasterSeed(seed);
     //root.privateKey = seed
     //const root = hdkey.fromExtendedKey("xprv9ydRptzPhdNud67iHrKp6zdTivxFEciurMfM1GVEByQhR6gDqBAJZMgrv224Mv8nKtkxFt7PXzSjC7ZHFox19Esh5pH6R3ZDrhT989FFVCm");
     //console.log(root)
     var address =  pubkey_to_address(root.publicKey);
+    //if (verbose) console.log('root addr: ' + address);
 
     const masterPrivateKey = root.privateKey.toString('hex');
     if (verbose) console.log('masterPrivateKey: ' + masterPrivateKey);
@@ -116,8 +126,18 @@ function generate_addresses() {
     let i = 0
     let path = ''
 
+    const ecdsa = document.querySelector("#ecdsa").checked
+    const ed25519 = document.querySelector("#ed25519").checked
+    const chameleon1 = document.querySelector("#chameleon1").checked
+    const chameleon2 = document.querySelector("#chameleon2").checked
+
+
     for (i=0; i<count; i++) {
+        // default ecdsa
         path = `m/44'/209'/0'/0/` + i.toString()
+        if (chameleon2) {
+            path = `m/44'/0'/0'/0/` + i.toString()
+        }
         if (verbose) console.log("path "+path)
         const derived = root.derive(path);
         const papercode = bip39.entropyToMnemonic(derived.privateKey.toString('hex'))
